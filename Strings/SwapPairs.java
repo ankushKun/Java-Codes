@@ -10,15 +10,16 @@ public class SwapPairs{
   public static String swap(String s){
     int len = s.length();
     boolean lastLeft = false;
-    if(s.length()%3==0){
+    if(s.length()%2==0){
+      len-=1;
+    }else{
       len-=2;
       lastLeft=true;
-    }else{
-      len-=1;
     }
     String swapped="";
     for(int i=0;i<len;i+=2){
-      swapped+=s.charAt(i+1)+s.charAt(i);
+      swapped+=s.charAt(i+1);
+      swapped+=s.charAt(i);
     }
     if(lastLeft){
       swapped+=s.charAt(s.length()-1);
