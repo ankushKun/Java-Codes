@@ -1,37 +1,33 @@
 import java.util.Scanner;
 
 public class Primefactors {
+    static Scanner sc = new Scanner(System.in);
+    static int num[];
+    static int size;
+
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number > ");
         int n = sc.nextInt();
-        primeFactors(n);
 
     }
 
-    public static void primeFactors(int n) {
-        // Print the number of 2s that divide n
-        while (n % 2 == 0) {
-            System.out.print(2 + " ");
-            n /= 2;
+    public static void primFact() {
+
+    }
+
+    public static void readSize(int nx) {
+        size = nx;
+    }
+
+    public static void getNumbers() {
+        for (int i = 0; i < num.length; i++) {
+            System.out.print("Enter a number : ");
+            num[i] = sc.nextInt();
         }
+    }
 
-        // n must be odd at this point. So we can
-        // skip one element (Note i = i +2)
-        for (int i = 3; i <= Math.sqrt(n); i += 2) {
-            // While i divides n, print i and divide n
-            while (n % i == 0) {
-                System.out.print(i + " ");
-                n /= i;
-            }
-        }
+    public static void showPrimeFact() {
 
-        // This condition is to handle the case whien
-        // n is a prime number greater than 2
-        if (n > 2)
-            System.out.print(n);
-
-        System.out.println();
     }
 
 }
