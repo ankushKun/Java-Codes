@@ -13,6 +13,7 @@ public class Evil {
                 num1s++;
             }
         }
+        System.out.println("Number of 1s : " + num1s);
         if (num1s % 2 == 0) {
             System.out.println("It is an EVIL number");
         } else {
@@ -23,7 +24,7 @@ public class Evil {
     public static String binStr(int x) {
         String bin = "";
         for (int i = x; i > 0; i /= 2) {
-            bin += i % 2;
+            bin = i % 2 + bin;
         }
         return bin;
     }
